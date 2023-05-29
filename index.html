@@ -5,12 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <header></header>
-    <main></main>
+    <main>
+        <div class="row">
+            
+            <div class="side-bar col s3">
+                <h2>Search for a City</h2>
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="textarea1" class="materialize-textarea"></textarea>
+                      <label for="textarea1">What's the weather like in...</label>
+                    </div>
+                  </div>
+                </form>
+                <a class="waves-effect waves-light btn col s12">search</a>
+            </div>
+            <div class="col s9">
+                <div id="current-weather">
+                    <!-- This is where the current weather card will live -->
+                </div>
+                <div class="row" id="five-day-forecast">
+                    <div class="forecast col s2.1">
+                        <div class="card blue-grey darken-1">
+                          <div class="card-content white-text">
+                            <span class="card-title">Jun 1, 2023</span>
+                            <ul>
+                                <li>Temperature</li>
+                                <li>Windspeed</li>
+                                <li>Humidity</li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                    </div>
+                    <div class=" forecast col s2.1">
+                        <div class="card blue-grey darken-1">
+                          <div class="card-content white-text">
+                            <span class="card-title">Jun 1, 2023</span>
+                            <ul>
+                                <li>Temperature</li>
+                                <li>Windspeed</li>
+                                <li>Humidity</li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                    </div>
+                    <div class="forecast col s2.1">
+                        <div class="card blue-grey darken-1">
+                          <div class="card-content white-text">
+                            <span class="card-title">Jun 1, 2023</span>
+                            <ul>
+                                <li>Temperature</li>
+                                <li>Windspeed</li>
+                                <li>Humidity</li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                    </div>
+                    <div class="forecast col s2.1">
+                        <div class="card blue-grey darken-1">
+                          <div class="card-content white-text">
+                            <span class="card-title">Jun 1, 2023</span>
+                            <ul>
+                                <li>Temperature</li>
+                                <li>Windspeed</li>
+                                <li>Humidity</li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                    </div>
+                    <div class="forecast col s2.1">
+                        <div class="card blue-grey darken-1">
+                          <div class="card-content white-text">
+                            <span class="card-title">Jun 1, 2023</span>
+                            <ul>
+                                <li>Temperature</li>
+                                <li>Windspeed</li>
+                                <li>Humidity</li>
+                            </ul>
+                          </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </main>
     <footer></footer>
     <script src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
