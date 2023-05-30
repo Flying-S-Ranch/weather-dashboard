@@ -13,6 +13,7 @@ searchBtn.addEventListener("click", function(event){
         name: searchCity.value,
     }
     localStorage.setItem("Local Weather", JSON.stringify(cityWeather))
+    searchCity.value = " "
 })
 
 // INITIALIZATIONS
