@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <header></header>
+    <header>
+      <h1 class="d-flex">How's the Weather?</h1>
+    </header>
     <main>
         <div class="row">
             
@@ -28,6 +30,19 @@
             <div class="col s9">
                 <div id="current-weather">
                     <!-- This is where the current weather card will live -->
+                    <div class="main-card" id="date-and-time">
+                      <p id="date">May 31, 2023</p>
+                      <p id="local-time">2:04pm</p>
+                    </div>
+                    
+                    <h2 id="cityName">Atlanta</h2>
+                    
+                    <div class="main-card" id="weather-conditions">
+                      <p id="temp">76*F</p>
+                      <p id="wind-speed">8mph</p>
+                      <p id="humidity">44%</p>
+                    </div>
+                    
                 </div>
                 <div class="row" id="five-day-forecast">
                     <div class="forecast col s2.1">
