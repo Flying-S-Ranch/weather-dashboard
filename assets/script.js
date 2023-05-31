@@ -17,6 +17,11 @@ function makeCityBtn() {
    var cityBtn = document.createElement("button");
    // build the button's appearance
    cityBtn.textContent = savedCity.name;
+   cityBtn.classList.add('waves-effect')
+   cityBtn.classList.add('waves-light')
+   cityBtn.classList.add('btn')
+   cityBtn.classList.add('col')
+   cityBtn.classList.add('s12')
    // place the button under the search bar
    searchList.append(cityBtn)
 
@@ -27,13 +32,16 @@ function makeCityBtn() {
 // USER INTERACTIONS
 searchBtn.on("click", function(event){
     event.preventDefault;
-    cityWeather = {
-        name: searchCity.value,
+    if (searchCity.value !== " "){
+        cityWeather = {
+            name: searchCity.value,
+        }
+        console.log(searchCity.value)
+        localStorage.setItem("localWeather", JSON.stringify(cityWeather))
+        searchCity.value = " "
+        makeCityBtn();
+        } 
     }
-    console.log(searchCity.value)
-    localStorage.setItem("localWeather", JSON.stringify(cityWeather))
-    searchCity.value = " "
-    makeCityBtn();
-    })
+   )
 
 // INITIALIZATIONS
