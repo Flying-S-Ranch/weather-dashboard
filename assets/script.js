@@ -3,6 +3,7 @@ var searchCity = document.querySelector("#search-input")
 console.log(searchCity.value)
 var searchBtn = $("#search-button")
 var searchList = $("#city-search-list")
+var cityNameEl = document.querySelector("#city-name")
 
 // DATA / STATE
 var cityWeather;
@@ -50,7 +51,7 @@ searchBtn.on("click", function(event){
         cityWeather = {
             name: searchCity.value,
         }
-        console.log(searchCity.value)
+        cityNameEl.textContent= searchCity.value
         localStorage.setItem("localWeather", JSON.stringify(cityWeather))
         searchCity.value = " "
         
