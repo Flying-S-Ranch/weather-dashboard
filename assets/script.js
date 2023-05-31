@@ -7,9 +7,7 @@ var cityNameEl = document.querySelector("#city-name")
 
 // DATA / STATE
 var cityWeather;
-var openWeatherAPIKey = "6311504d4ded7625e2fa0f09aa7e0ac3"
-var city = "Erdington"
-var weatherQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherAPIKey;
+
 
 
 
@@ -31,25 +29,36 @@ function makeCityBtn() {
    cityBtn.classList.add('s12')
    // place the button under the search bar
    searchList.append(cityBtn)
+}
 
 function makeRequest() {
+    var openWeatherAPIKey = "6311504d4ded7625e2fa0f09aa7e0ac3"
+    var city = searchCity.value
+    console.log(city)
+    var weatherQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherAPIKey;
     fetch(weatherQuery)
-        .then(function () {
-            console.log("it's working")
-            console.log(weatherQuery)
-        })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data)
+        cityWeather.wind = data.wind.speed
+        console.log(cityWeather.wind + "mph")
+        cityWeather.temp = Math.floor((data.main.temp - 273.15)* 9/5 + 32)
+        console.log(cityWeather.temp + "F")
+        cityWeather.humidity = data.main.humidity
+        console.log(cityWeather.humidity + "%")
+      })
 }
 
-makeRequest();
-
-}
 
 // USER INTERACTIONS
 searchBtn.on("click", function(event){
     event.preventDefault;
     if (searchCity.value !== " "){
+        makeRequest();
         cityWeather = {
-            name: searchCity.value,
+            name: searchCity.value, 
         }
         cityNameEl.textContent= searchCity.value
         localStorage.setItem("localWeather", JSON.stringify(cityWeather))
