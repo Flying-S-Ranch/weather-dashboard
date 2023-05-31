@@ -34,6 +34,23 @@ function makeCityBtn() {
    cityBtn.classList.add('s12')
    // place the button under the search bar
    searchList.append(cityBtn)
+   cityBtn.addEventListener('click', function(){
+    cityNameEl.textContent = savedCity.name;
+    var openWeatherAPIKey = "6311504d4ded7625e2fa0f09aa7e0ac3"
+    var city = savedCity.name
+    console.log(city)
+    var weatherQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherAPIKey;
+    // I followed the example in activity 06>01>04-Stu_Create_Fetch for lines 39-52
+    fetch(weatherQuery)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        windEl.textContent = "Wind Speed: " + data.wind.speed + "mph"
+        tempEl.textContent = "Temperature: " + Math.floor((data.main.temp - 273.15)* 9/5 + 32) + "F"
+        humidityEl.textContent = "Humidity: " + data.main.humidity + "%"
+      })
+   })
 }
 
 function makeRequest() {
