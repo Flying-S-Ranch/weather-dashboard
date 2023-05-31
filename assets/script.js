@@ -4,6 +4,11 @@ console.log(searchCity.value)
 var searchBtn = $("#search-button")
 var searchList = $("#city-search-list")
 var cityNameEl = document.querySelector("#city-name")
+var dateEl = document.querySelector("#date")
+var timeEl = document.querySelector("#local-time")
+var tempEl = document.querySelector("#temp")
+var windEl = document.querySelector("#wind-speed")
+var humidityEl = document.querySelector("#humidity")
 
 // DATA / STATE
 var cityWeather;
@@ -42,13 +47,9 @@ function makeRequest() {
         return response.json();
       })
       .then(function (data) {
-        console.log(data)
-        cityWeather.wind = data.wind.speed
-        console.log(cityWeather.wind + "mph")
-        cityWeather.temp = Math.floor((data.main.temp - 273.15)* 9/5 + 32)
-        console.log(cityWeather.temp + "F")
-        cityWeather.humidity = data.main.humidity
-        console.log(cityWeather.humidity + "%")
+        windEl.textContent = "Wind Speed: " + data.wind.speed + "mph"
+        tempEl.textContent = "Temperature: " + Math.floor((data.main.temp - 273.15)* 9/5 + 32) + "F"
+        humidityEl.textContent = "Humidity: " + data.main.humidity + "%"
       })
 }
 
