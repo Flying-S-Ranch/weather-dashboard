@@ -6,6 +6,12 @@ var searchList = $("#city-search-list")
 
 // DATA / STATE
 var cityWeather;
+var openWeatherAPIKey = "6311504d4ded7625e2fa0f09aa7e0ac3"
+var city = "Erdington"
+var weatherQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherAPIKey;
+
+
+
 // var cityList = [];
 
 // FUNCTIONS
@@ -25,7 +31,15 @@ function makeCityBtn() {
    // place the button under the search bar
    searchList.append(cityBtn)
 
-// for ( i = 0; i < cityList.length, i++)
+function makeRequest() {
+    fetch(weatherQuery)
+        .then(function () {
+            console.log("it's working")
+            console.log(weatherQuery)
+        })
+}
+
+makeRequest();
 
 }
 
@@ -39,6 +53,7 @@ searchBtn.on("click", function(event){
         console.log(searchCity.value)
         localStorage.setItem("localWeather", JSON.stringify(cityWeather))
         searchCity.value = " "
+        
         makeCityBtn();
         } 
     }
