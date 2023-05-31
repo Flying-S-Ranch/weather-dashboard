@@ -47,7 +47,7 @@ function makeRequest() {
         return response.json();
       })
       .then(function (data) {
-        windEl.textContent = "WindSpeed: " + data.wind.speed + "mph"
+        windEl.textContent = "Wind Speed: " + data.wind.speed + "mph"
         tempEl.textContent = "Temperature: " + Math.floor((data.main.temp - 273.15)* 9/5 + 32) + "F"
         humidityEl.textContent = "Humidity: " + data.main.humidity + "%"
       })
