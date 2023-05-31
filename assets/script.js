@@ -36,6 +36,7 @@ function makeRequest() {
     var city = searchCity.value
     console.log(city)
     var weatherQuery = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + openWeatherAPIKey;
+    // I followed the example in activity 06>01>04-Stu_Create_Fetch for lines 39-52
     fetch(weatherQuery)
       .then(function (response) {
         return response.json();

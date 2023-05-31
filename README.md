@@ -1,13 +1,19 @@
 # WEATHER DASHBOARD
 
 ## DESCRIPTION
-This project draws weather information from an API and displays the forecast for a selected city. This project allowed me to practice connecting to third-party APIs, and to continue practicing skills across HTML, CSS, and JavaScript. My favorite part of this project was to search for ways to display a weather picture behind the current forecast for the chosen city.
+This project draws weather information from an API and displays the forecast for a selected city. This project allowed me to practice connecting to third-party APIs, and to continue practicing skills across HTML, CSS, and JavaScript. 
 
 ## USAGE
 To begin, search for a city in the search bar on the upper left-hand corner. Click the search button and the current weather will appear on the right, with a five day forecast below. The city you have searched for will be stored in a list under the search button. These list items are also buttons so that users can easily access the weather and forecast for their favorite places.
 
 ## CREDITS
 This project drew its basic design from the README in our bootcamp assignment. The layout is adapted from the sample project.
+
+I made use of the Materialize CSS framework. The link to access this framework is available here: https://materializecss.com/
+
+The Full Stack blog entry titled "How to Use API Keys" was very helpful for this project. This blog entry can be accessed here: https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys
+
+I found the formula to convert Kelvin temperatures to Farenheit here: https://www.google.com/search?q=kelvin+to+fahrenheit&oq=kelvin+to+&aqs=chrome.2.69i57j0i433i512l2j0i512l7.3501j0j4&sourceid=chrome&ie=UTF-8
 
 ## LICENSE
 The MIT License (MIT)
